@@ -50,12 +50,13 @@ Now smudgeplot make install smudgeplot R package, compiles the C kernel for sear
 
 ```
 cd smudgeplot
-make -s INSTALL_PREFIX=/workspace
+mkdir -p ~/progs/sploidyplot/bin  ~/progs/FastK/bin
+make -s INSTALL_PREFIX=~/progs/sploidyplot
 R -e 'install.packages(".", repos = NULL, type="source")' # install the R package
 cd ..
 smudgeplot.py -h # test the installation worked out nice
 cd FastK && make
-install -c FastK Fastrm Fastmv Fastcp Fastmerge Histex Tabex Profex Logex Vennex Symmex Haplex Homex Fastcat /workspace/bin/
+install -c FastK Fastrm Fastmv Fastcp Fastmerge Histex Tabex Profex Logex Vennex Symmex Haplex Homex Fastcat ~/progs/FastK/bin
 FastK # test the installation worked out nice
 cd ..
 ```
