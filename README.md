@@ -54,9 +54,11 @@ mkdir -p ~/progs/sploidyplot/bin  ~/progs/FastK/bin
 make -s INSTALL_PREFIX=~/progs/sploidyplot
 R -e 'install.packages(".", repos = NULL, type="source")' # install the R package
 cd ..
+export PATH=~/progs/sploidyplot/bin:$PATH
 smudgeplot.py -h # test the installation worked out nice
 cd FastK && make
 install -c FastK Fastrm Fastmv Fastcp Fastmerge Histex Tabex Profex Logex Vennex Symmex Haplex Homex Fastcat ~/progs/FastK/bin
+export PATH=~/progs/FastK/bin:$PATH
 FastK # test the installation worked out nice
 cd ..
 ```
